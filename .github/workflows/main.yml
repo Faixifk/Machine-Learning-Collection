@@ -10,6 +10,7 @@ jobs:
       matrix:
         python-version: ["3.7"]
 
+    permissions: write-all
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
@@ -38,8 +39,8 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
-          languages: go, javascript
-
+          languages: python
+        
       # Here is where you build your code
       - run: |
           make bootstrap

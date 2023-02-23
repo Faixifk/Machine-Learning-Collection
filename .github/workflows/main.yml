@@ -1,8 +1,6 @@
 name: Python package
 
-on:
-  push:
-    branches : [ unit-test-branch ]
+on: [push]
   
 jobs:
   build:

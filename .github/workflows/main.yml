@@ -34,3 +34,8 @@ jobs:
         run: |
           pytest ML_tests/LinearRegression_tests/LinearRegression_GD.py
           pytest ML_tests/LinearRegression_tests/LinearRegression_normal.py
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: ${{ matrix.language }}
+          config-file: ./.github/codeql/codeql-config.yml  # <-- add this line

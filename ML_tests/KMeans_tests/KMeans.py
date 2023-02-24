@@ -19,13 +19,21 @@ class TestKMeansClustering(unittest.TestCase):
         self.K = 10
         self.max_iterations = 100
         self.plot_figure = True
-        self.num_examples = 10
-        self.num_features = 10
+        self.num_examples = 3
+        self.num_features = 3
         
 
 
     def test_correctClustersCount(self):
-        instance = KMeansClustering(np.array([self.num_examples,self.num_features]), self.K)
+        instance = KMeansClustering(np.array(
+
+            [
+                [1,1,1],
+                [2,3,3],
+                [4,6,7]
+            ]
+
+        ), self.K)
         print(instance.K)
         print(instance.max_iterations)
         self.assertTrue(instance.K == self.K)

@@ -35,4 +35,4 @@ jobs:
         run: |
           pytest ML_tests/LinearRegression_tests/LinearRegression_GD.py
           pytest ML_tests/LinearRegression_tests/LinearRegression_normal.py
-          pylint ./Machine-Learning-Collection
+          find . -type f -name "*.py" | xargs pylint 

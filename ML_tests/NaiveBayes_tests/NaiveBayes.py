@@ -20,7 +20,7 @@ class NaiveBayes(unittest.TestCase):
         self.num_features = 5
         self.num_classes = 3
         self.eps = 1e-6
-        
+
     def test_correctShape(self):
 
         instance = NaiveBayes(np.array(

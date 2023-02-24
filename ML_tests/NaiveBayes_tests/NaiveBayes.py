@@ -22,6 +22,59 @@ class NaiveBayes(unittest.TestCase):
         self.num_classes = 3
         self.eps = 1e-6
 
+    def test_correctShape(self):
+
+        instance = NaiveBayes(np.array(
+
+            [
+                [1,1,1,4,6],
+                [2,3,3,3,6],
+                [4,6,7,4,7]
+            ]
+
+        ), [1,1,1,3,5,6,7,3,5,7,6])
+
+        self.assertTrue((instance.num_examples, instance.num_classes) == (self.num_examples, self.num_features))
+
+    def test_correctNumFeatures(self):
+
+        instance = NaiveBayes(np.array(
+
+            [
+                [1,1,1,4,6],
+                [2,3,3,3,6],
+                [4,6,7,4,7]
+            ]
+
+        ), [1,1,1,3,5,6,7,3,5,7,6])
+        self.assertTrue(instance.num_features == self.num_features)
+
+    def test_correctNumExamples(self):
+
+        instance = NaiveBayes(np.array(
+
+            [
+                [1,1,1,4,6],
+                [2,3,3,3,6],
+                [4,6,7,4,7]
+            ]
+
+        ), [1,1,1,3,5,6,7,3,5,7,6])
+        self.assertTrue(instance.num_examples == self.num_examples)
+
+    def test_correctEps(self):
+
+        instance = NaiveBayes(np.array(
+
+            [
+                [1,1,1,4,6],
+                [2,3,3,3,6],
+                [4,6,7,4,7]
+            ]
+
+        ), [1,1,1,3,5,6,7,3,5,7,6])
+        self.assertTrue(instance.eps == self.eps)
+
 
 if __name__ == "__main__":
     print("Running Naive Bayes tests:")

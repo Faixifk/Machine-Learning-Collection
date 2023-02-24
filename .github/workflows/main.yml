@@ -48,3 +48,12 @@ jobs:
           black ML_tests/NaiveBayes_tests/NaiveBayes.py
           black ML_tests/KMeans_tests/KMeans.py
 
+      - name: Test with pylint
+        continue-on-error: true
+        run: |
+          pylint ML_tests/LinearRegression_tests/LinearRegression_GD.py
+          pylint ML_tests/LinearRegression_tests/LinearRegression_normal.py
+          pylint ML_tests/NaiveBayes_tests/NaiveBayes.py
+          pylint ML_tests/KMeans_tests/KMeans.py
+
+

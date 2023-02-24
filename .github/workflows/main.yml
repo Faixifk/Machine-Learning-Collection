@@ -35,7 +35,5 @@ jobs:
         run: |
           pytest ML_tests/LinearRegression_tests/LinearRegression_GD.py
           pytest ML_tests/LinearRegression_tests/LinearRegression_normal.py
-      - name: Test with pytest
-        run: |
-          pylint ML_tests/LinearRegression_tests/LinearRegression_GD.py
-          pylint ML_tests/LinearRegression_tests/LinearRegression_normal.py
+          pytest ML_tests/KMeans_tests/KMeans.py
+          pytest ML_tests/NaiveBayes_tests/NaiveBayes.py

@@ -38,7 +38,7 @@ class TestKMeansClustering(unittest.TestCase):
         print(instance.max_iterations)
         self.assertTrue(instance.K == self.K)
 
-    def test_correctFeaturesShape(self):
+    def test_correctNumFeatures(self):
 
         instance = KMeansClustering(np.array(
 
@@ -49,32 +49,33 @@ class TestKMeansClustering(unittest.TestCase):
             ]
 
         ), self.K)
-        print(instance.K)
-        print(instance.max_iterations)
-        self.assertTrue(instance.X.shape == (self.num_examples, self.num_features))
+        self.assertTrue(instance.num_features == self.num_features)
 
-    # def test_perfectnegativeslope(self):
-    #     W = linear_regression_normal_equation(self.X2, self.y2)
-    #     boolean_array = np.isclose(W, self.W2_correct)
-    #     self.assertTrue(boolean_array.all())
+    def test_correctNumExamples(self):
 
-    # def test_multipledimension(self):
-    #     W = linear_regression_normal_equation(self.X3, self.y3)
-    #     print(W)
-    #     print(self.W3_correct)
-    #     boolean_array = np.isclose(W, self.W3_correct)
-    #     self.assertTrue(boolean_array.all())
+        instance = KMeansClustering(np.array(
 
-    # def test_zeros(self):
-    #     W = linear_regression_normal_equation(self.X4, self.y4)
-    #     boolean_array = np.isclose(W, self.W4_correct)
-    #     self.assertTrue(boolean_array.all())
+            [
+                [1,1,1],
+                [2,3,3],
+                [4,6,7]
+            ]
 
-    # def test_noisydata(self):
-    #     W = linear_regression_normal_equation(self.X5, self.y5)
-    #     boolean_array = np.isclose(W, self.W5_correct, atol=1e-3)
-    #     self.assertTrue(boolean_array.all())
+        ), self.K)
+        self.assertTrue(instance.num_examples == self.num_examples)
 
+    def test_correctNumIterations(self):
+
+        instance = KMeansClustering(np.array(
+
+            [
+                [1,1,1],
+                [2,3,3],
+                [4,6,7]
+            ]
+
+        ), self.K)
+        self.assertTrue(instance.max_iterations == self.max_iterations)
 
 if __name__ == "__main__":
     print("Running KMeans tests:")

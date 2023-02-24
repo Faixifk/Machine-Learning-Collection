@@ -36,5 +36,5 @@ jobs:
         run: |
           pytest ML_tests/LinearRegression_tests/LinearRegression_GD.py
           pytest ML_tests/LinearRegression_tests/LinearRegression_normal.py
-          pytest tree/unit-test-branch/ML_tests/NaiveBayes_tests/NaiveBayes.py
-          pytest tree/unit-test-branch/ML_tests//ML_tests/KMeans_tests/KMeans.py
+          pytest ML_tests/NaiveBayes_tests/NaiveBayes.py
+          pytest ML_tests//ML_tests/KMeans_tests/KMeans.py

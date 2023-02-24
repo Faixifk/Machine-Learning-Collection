@@ -1,0 +1,6 @@
+In order to contribute to the repo, or build more features, we have implemented test cases for a couple of algorithms.
+Besides running the test cases as a part of the pipeline, we have also run flake8 tests, black, and pylint on the test cases files.
+We have also run codeQL security analysis on Github Actions and Jenkins.
+The PyLint tests fail because of certain factors such as missing docstring, not following snake-case etc.
+However, we have ignored these PyLint errors and proceeded the workflow.
+There are no security alerts given by CodeQL.

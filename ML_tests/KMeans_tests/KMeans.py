@@ -23,8 +23,8 @@ class TestKMeansClustering(unittest.TestCase):
         self.num_features = 3
         
 
-
     def test_correctClustersCount(self):
+
         instance = KMeansClustering(np.array(
 
             [
@@ -37,6 +37,21 @@ class TestKMeansClustering(unittest.TestCase):
         print(instance.K)
         print(instance.max_iterations)
         self.assertTrue(instance.K == self.K)
+
+    def test_correctFeaturesShape(self):
+
+        instance = KMeansClustering(np.array(
+
+            [
+                [1,1,1],
+                [2,3,3],
+                [4,6,7]
+            ]
+
+        ), self.K)
+        print(instance.K)
+        print(instance.max_iterations)
+        self.assertTrue(instance.X.shape == (self.num_examples, self.num_features))
 
     # def test_perfectnegativeslope(self):
     #     W = linear_regression_normal_equation(self.X2, self.y2)

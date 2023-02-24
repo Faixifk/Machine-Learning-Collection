@@ -13,7 +13,7 @@ sys.path.append("ML/algorithms/naivebayes")
 from naivebayes import NaiveBayes
 
 
-class NaiveBayes(unittest.TestCase):
+class NaiveBayesTests(unittest.TestCase):
 
     def setUp(self):
         # test cases we want to run

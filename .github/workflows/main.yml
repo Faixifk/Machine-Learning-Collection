@@ -22,6 +22,7 @@ jobs:
           pip install flake8 pytest
           pip install pandas
           pip install numpy
+          pip install pylint
           # pip3 install torch torchvision torchaudio -f https://download.pytorch.org/whl/cpu/torch_stable.html
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Lint with flake8
@@ -34,3 +35,5 @@ jobs:
         run: |
           pytest ML_tests/LinearRegression_tests/LinearRegression_GD.py
           pytest ML_tests/LinearRegression_tests/LinearRegression_normal.py
+          pylint ./server
+

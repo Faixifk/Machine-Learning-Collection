@@ -9,7 +9,7 @@ import numpy as np
 sys.path.append("ML/algorithms/kmeans")
 
 # If run from local:
-sys.path.append('../../ML/algorithms/linearregression/')
+# sys.path.append('../../ML/algorithms/linearregression/')
 from kmeansclustering import KMeansClustering
 
 

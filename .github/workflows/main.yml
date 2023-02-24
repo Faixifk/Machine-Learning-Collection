@@ -23,6 +23,7 @@ jobs:
           pip install pandas
           pip install numpy
           pip install pylint
+          pip install black
           # pip3 install torch torchvision torchaudio -f https://download.pytorch.org/whl/cpu/torch_stable.html
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Lint with flake8
@@ -35,5 +36,5 @@ jobs:
         run: |
           pytest ML_tests/LinearRegression_tests/LinearRegression_GD.py
           pytest ML_tests/LinearRegression_tests/LinearRegression_normal.py
-          pytest unit-test-branch/ML_tests/NaiveBayes_tests/NaiveBayes.py
-          pytest unit-test-branch/ML_tests/KMeans_tests/KMeans.py
+          pytest tree/unit-test-branch/ML_tests/NaiveBayes_tests
+          pytest tree/unit-test-branch/ML_tests//ML_tests/KMeans_tests/KMeans.py
